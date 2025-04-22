@@ -1,0 +1,110 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Layout Using Flexbox */
+main {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+}
+
+.item {
+    flex: 1 1 30%; /* Flex grow, shrink, and basis */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+    nav ul {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .content {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .item {
+        flex: 1 1 100%; /* Items take full width */
+        margin-bottom: 20px; /* Add space between items */
+    }
+}
+
+/* Tablet (601px to 1024px) */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: row; /* Use row layout */
+    }
+
+    .item {
+        flex: 1 1 48%; /* Two items per row */
+    }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .content {
+        flex-direction: row; /* Keep items in a row */
+    }
+
+    .item {
+        flex: 1 1 30%; /* Three items per row */
+    }
+}
